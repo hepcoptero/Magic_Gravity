@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nome do Seu RPG Medieval</title>
+  <title>Reinos Esquecidos - RPG Medieval</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap');
 
@@ -29,8 +29,7 @@
       line-height: 1.6;
       background-image: 
         radial-gradient(circle at 20% 50%, rgba(139,26,26,0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(201,162,39,0.1) 0%, transparent 40%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%231a120b" width="100" height="100"/><path d="M0 50h100M50 0v100" stroke="%232a1f15" stroke-width="1"/></svg>');
+        radial-gradient(circle at 80% 20%, rgba(201,162,39,0.1) 0%, transparent 40%);
     }
 
     /* ===== HEADER ===== */
@@ -101,15 +100,15 @@
 
     /* ===== HERO ===== */
     .hero {
-      min-height: 70vh;
+      min-height: 75vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 4rem 2rem;
       background: 
-        linear-gradient(rgba(26,18,11,0.7), rgba(26,18,11,0.85)),
-        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1600') center/cover no-repeat;
+        linear-gradient(rgba(26,18,11,0.65), rgba(26,18,11,0.8)),
+        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1800&q=80') center/cover no-repeat;
       border-bottom: 4px solid var(--ouro);
     }
 
@@ -214,6 +213,15 @@
       box-shadow: 0 12px 35px rgba(201,162,39,0.25);
     }
 
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      border: 2px solid #5a4a2a;
+    }
+
     .card h3 {
       font-family: 'MedievalSharp', cursive;
       color: var(--ouro);
@@ -226,19 +234,22 @@
       font-size: 0.95rem;
     }
 
-    .card .icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    /* ===== LORE / TEXTO LONGO ===== */
+    /* ===== LORE ===== */
     .lore-box {
       background: rgba(42,31,21,0.8);
       border: 2px solid var(--ouro);
       border-radius: 8px;
       padding: 2.5rem;
       box-shadow: inset 0 0 30px rgba(0,0,0,0.3);
+    }
+
+    .lore-box img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid var(--ouro);
+      margin-bottom: 1.5rem;
     }
 
     .lore-box p {
@@ -268,13 +279,14 @@
     }
 
     .personagem img {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       border: 3px solid var(--ouro);
       object-fit: cover;
       margin-bottom: 1rem;
       background: #1a120b;
+      box-shadow: 0 0 15px rgba(201,162,39,0.3);
     }
 
     .personagem h3 {
@@ -290,7 +302,7 @@
       font-weight: 700;
     }
 
-    /* ===== REGRAS / LISTA ===== */
+    /* ===== REGRAS ===== */
     .regras-lista {
       list-style: none;
     }
@@ -338,7 +350,7 @@
         justify-content: center;
       }
       .hero {
-        min-height: 50vh;
+        min-height: 55vh;
       }
     }
   </style>
@@ -348,7 +360,7 @@
   <!-- HEADER -->
   <header>
     <div class="header-content">
-      <div class="logo">⚔ Nome do RPG ⚔</div>
+      <div class="logo">⚔ Reinos Esquecidos ⚔</div>
       <nav>
         <ul>
           <li><a href="#inicio">Início</a></li>
@@ -365,35 +377,34 @@
   <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="hero-content">
-      <h1>Nome do Seu RPG</h1>
+      <h1>Reinos Esquecidos</h1>
       <p>
-        Aqui vai a frase de efeito ou slogan do seu RPG medieval.
-        Exemplo: "Em um reino esquecido pelo tempo, heróis surgem das cinzas..."
+        Em um reino esquecido pelo tempo, heróis surgem das cinzas para enfrentar a escuridão ancestral.
       </p>
       <a href="#sobre" class="btn">Começar a Aventura</a>
     </div>
   </section>
 
-  <!-- SOBRE / O QUE É -->
+  <!-- SOBRE -->
   <section id="sobre">
     <h2 class="section-title">Sobre o RPG</h2>
     <div class="cards">
       <div class="card">
-        <span class="icon">🏰</span>
+        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&q=80" alt="Castelo Medieval">
         <h3>O Reino</h3>
         <p>
           Descreva aqui o reino, a ambientação principal ou a cidade onde a aventura acontece.
         </p>
       </div>
       <div class="card">
-        <span class="icon">🗡️</span>
+        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Batalha Medieval">
         <h3>O Conflito</h3>
         <p>
           Qual é a ameaça principal? Guerra, maldição, dragão, deuses antigos...?
         </p>
       </div>
       <div class="card">
-        <span class="icon">📜</span>
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80" alt="Pergaminho Antigo">
         <h3>O Sistema</h3>
         <p>
           D&D 5e? Pathfinder? Sistema próprio? Coloque aqui as informações básicas do sistema.
@@ -406,47 +417,47 @@
   <section id="personagens">
     <h2 class="section-title">Personagens</h2>
     <div class="personagens">
-      <!-- PERSONAGEM 1 -->
+
+      <!-- Personagem 1 -->
       <div class="personagem">
-        <img src="https://via.placeholder.com/140x140/2a1f15/c9a227?text=Foto" alt="Nome do Personagem">
-        <h3>Nome do Herói</h3>
-        <div class="classe">Classe / Raça</div>
-        <p>Breve descrição do personagem. Personalidade, origem, motivação...</p>
+        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=400&q=80" alt="Guerreiro">
+        <h3>Aldric Ferronegro</h3>
+        <div class="classe">Guerreiro / Humano</div>
+        <p>Veterano de muitas batalhas. Carrega a espada de seu pai e um passado que prefere esquecer.</p>
       </div>
 
-      <!-- PERSONAGEM 2 -->
+      <!-- Personagem 2 -->
       <div class="personagem">
-        <img src="https://via.placeholder.com/140x140/2a1f15/c9a227?text=Foto" alt="Nome do Personagem">
-        <h3>Nome do Herói</h3>
-        <div class="classe">Classe / Raça</div>
-        <p>Breve descrição do personagem. Personalidade, origem, motivação...</p>
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" alt="Maga">
+        <h3>Elara Lunaris</h3>
+        <div class="classe">Maga / Elfa</div>
+        <p>Estudiosa das artes arcanas. Busca o conhecimento proibido para salvar seu povo.</p>
       </div>
 
-      <!-- PERSONAGEM 3 -->
+      <!-- Personagem 3 -->
       <div class="personagem">
-        <img src="https://via.placeholder.com/140x140/2a1f15/c9a227?text=Foto" alt="Nome do Personagem">
-        <h3>Nome do Herói</h3>
-        <div class="classe">Classe / Raça</div>
-        <p>Breve descrição do personagem. Personalidade, origem, motivação...</p>
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80" alt="Ladino">
+        <h3>Kael Sombrio</h3>
+        <div class="classe">Ladino / Meio-Orc</div>
+        <p>Ex-assassino que agora luta ao lado dos heróis. Sua lealdade ainda é um mistério.</p>
       </div>
+
     </div>
   </section>
 
-  <!-- O MUNDO / LORE -->
+  <!-- O MUNDO -->
   <section id="mundo">
     <h2 class="section-title">O Mundo</h2>
     <div class="lore-box">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&q=80" alt="Paisagem Medieval">
       <p>
-        <strong>Aqui você coloca a lore principal do mundo.</strong> 
-        Escreva sobre a história antiga, as eras, os deuses, as guerras passadas, 
-        as profecias, etc.
+        <strong>Há milênios</strong>, os deuses caminhavam entre os mortais. Mas a Grande Separação os afastou, deixando o mundo à mercê de forças ancestrais que agora despertam.
       </p>
       <p>
-        Segundo parágrafo da lore. Pode falar sobre as facções, reinos vizinhos, 
-        criaturas místicas ou qualquer coisa importante.
+        O reino de Valdoria, outrora próspero, agora vive sob a sombra de uma maldição que consome as terras. Florestas secorrem, rios secam e criaturas das trevas emergem das cavernas.
       </p>
       <p>
-        Terceiro parágrafo. Sinta-se livre para expandir o quanto quiser.
+        Apenas um grupo de heróis improváveis pode impedir o retorno do Antigo Mal. O destino de todos os reinos está em suas mãos.
       </p>
     </div>
   </section>
@@ -457,23 +468,23 @@
     <ul class="regras-lista">
       <li>
         <strong>Nível inicial:</strong> 
-        Exemplo: Todos começam no nível 3.
+        Todos os personagens começam no nível 3.
       </li>
       <li>
         <strong>Livros permitidos:</strong> 
-        Exemplo: Player's Handbook, Xanathar's, Tasha's...
+        Player's Handbook, Xanathar's Guide e Tasha's Cauldron.
       </li>
       <li>
         <strong>Criação de personagem:</strong> 
-        Exemplo: Pontos de atributo, rolagem 4d6, etc.
+        Método de pontos (27 pontos) ou rolagem 4d6 (descartando o menor).
       </li>
       <li>
         <strong>Sessões:</strong> 
-        Exemplo: Toda sexta-feira às 20h, online no Discord.
+        Toda sexta-feira às 20h, online pelo Discord + Foundry VTT.
       </li>
       <li>
-        <strong>Outras regras importantes:</strong> 
-        Coloque aqui o que achar necessário.
+        <strong>Outras regras:</strong> 
+        Morte permanente é possível. Ações têm consequências reais.
       </li>
     </ul>
   </section>
@@ -494,12 +505,11 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="logo-footer">⚔ Nome do RPG ⚔</div>
+    <div class="logo-footer">⚔ Reinos Esquecidos ⚔</div>
     <p>© 2025 - Todos os direitos reservados | Feito para aventureiros</p>
   </footer>
 
   <script>
-    // Smooth scroll para os links do menu
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
