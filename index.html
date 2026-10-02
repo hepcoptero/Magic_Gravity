@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nome do Seu RPG Medieval</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap');
+
+    :root {
+      --ouro: #c9a227;
+      --ouro-claro: #e8c547;
+      --vermelho: #8b1a1a;
+      --marrom: #3d2b1f;
+      --pergaminho: #f4e4bc;
+      --sombra: rgba(0,0,0,0.6);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cinzel', serif;
+      background: #1a120b;
+      color: var(--pergaminho);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(139,26,26,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(201,162,39,0.1) 0%, transparent 40%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%231a120b" width="100" height="100"/><path d="M0 50h100M50 0v100" stroke="%232a1f15" stroke-width="1"/></svg>');
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(180deg, #2a1f15 0%, #1a120b 100%);
+      border-bottom: 4px solid var(--ouro);
+      padding: 1.5rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px var(--sombra);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-family: 'MedievalSharp', cursive;
+      font-size: 1.8rem;
+      color: var(--ouro);
+      text-shadow: 2px 2px 4px black;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--pergaminho);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      transition: color 0.3s, text-shadow 0.3s;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--ouro);
+      text-shadow: 0 0 8px var(--ouro);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--ouro);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: 
+        linear-gradient(rgba(26,18,11,0.7), rgba(26,18,11,0.85)),
+        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1600') center/cover no-repeat;
+      border-bottom: 4px solid var(--ouro);
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-family: 'MedievalSharp', cursive;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--ouro);
+      text-shadow: 3px 3px 8px black, 0 0 30px rgba(201,162,39,0.4);
+      margin-bottom: 1rem;
+      letter-spacing: 3px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #e0d0b0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background: linear-gradient(180deg, var(--ouro) 0%, #a8841f 100%);
+      color: #1a120b;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      border: 2px solid #e8c547;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(201,162,39,0.4);
+    }
+
+    /* ===== SEÇÕES GERAIS ===== */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-family: 'MedievalSharp', cursive;
+      font-size: 2.2rem;
+      color: var(--ouro);
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    .section-title::after {
+      content: '⚔';
+      display: block;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: var(--vermelho);
+    }
+
+    /* ===== CARDS ===== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: linear-gradient(160deg, #2a1f15 0%, #1f1610 100%);
+      border: 2px solid var(--ouro);
+      border-radius: 8px;
+      padding: 1.8rem;
+      box-shadow: 0 8px 25px var(--sombra);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--ouro), transparent);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(201,162,39,0.25);
+    }
+
+    .card h3 {
+      font-family: 'MedievalSharp', cursive;
+      color: var(--ouro);
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      color: #d4c4a0;
+      font-size: 0.95rem;
+    }
+
+    .card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* ===== LORE / TEXTO LONGO ===== */
+    .lore-box {
+      background: rgba(42,31,21,0.8);
+      border: 2px solid var(--ouro);
+      border-radius: 8px;
+      padding: 2.5rem;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.3);
+    }
+
+    .lore-box p {
+      margin-bottom: 1.2rem;
+      color: #e0d0b0;
+      text-align: justify;
+    }
+
+    /* ===== PERSONAGENS ===== */
+    .personagens {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .personagem {
+      text-align: center;
+      background: #2a1f15;
+      border: 2px solid var(--ouro);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .personagem:hover {
+      transform: scale(1.03);
+    }
+
+    .personagem img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid var(--ouro);
+      object-fit: cover;
+      margin-bottom: 1rem;
+      background: #1a120b;
+    }
+
+    .personagem h3 {
+      color: var(--ouro);
+      font-family: 'MedievalSharp', cursive;
+      margin-bottom: 0.3rem;
+    }
+
+    .personagem .classe {
+      color: var(--vermelho);
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* ===== REGRAS / LISTA ===== */
+    .regras-lista {
+      list-style: none;
+    }
+
+    .regras-lista li {
+      background: #2a1f15;
+      border-left: 4px solid var(--ouro);
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .regras-lista li strong {
+      color: var(--ouro);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0f0a07;
+      border-top: 4px solid var(--ouro);
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      color: #a09070;
+      font-size: 0.9rem;
+    }
+
+    footer .logo-footer {
+      font-family: 'MedievalSharp', cursive;
+      color: var(--ouro);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 700px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        justify-content: center;
+      }
+      .hero {
+        min-height: 50vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-content">
+      <div class="logo">⚔ Nome do RPG ⚔</div>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#personagens">Personagens</a></li>
+          <li><a href="#mundo">O Mundo</a></li>
+          <li><a href="#regras">Regras</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Nome do Seu RPG</h1>
+      <p>
+        Aqui vai a frase de efeito ou slogan do seu RPG medieval.
+        Exemplo: "Em um reino esquecido pelo tempo, heróis surgem das cinzas..."
+      </p>
+      <a href="#sobre" class="btn">Começar a Aventura</a>
+    </div>
+  </section>
+
+  <!-- SOBRE / O QUE É -->
+  <section id="sobre">
+    <h2 class="section-title">Sobre o RPG</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="icon">🏰</span>
+        <h3>O Reino</h3>
+        <p>
+          Descreva aqui o reino, a ambientação principal ou a cidade onde a aventura acontece.
+        </p>
+      </div>
+      <div class="card">
+        <span class="icon">🗡️</span>
+        <h3>O Conflito</h3>
+        <p>
+          Qual é a ameaça principal? Guerra, maldição, dragão, deuses antigos...?
+        </p>
+      </div>
+      <div class="card">
+        <span class="icon">📜</span>
+        <h3>O Sistema</h3>
+        <p>
+          D&D 5e? Pathfinder? Sistema próprio? Coloque aqui as informações básicas do sistema.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAGENS -->
+  <section id="personagens">
+    <h2 class="section-title">Personagens</h2>
+    <div class="personagens">
+      <!-- PERSONAGEM 1 -->
+      <div class="personagem">
+        <img src="https://via.placeholder.com/140x140/2a1f15/c9a227?text=Foto" alt="Nome do Personagem">
+        <h3>Nome do Herói</h3>
+        <div class="classe">Classe / Raça</div>
+        <p>Breve descrição do personagem. Personalidade, origem, motivação...</p>
+      </div>
+
+      <!-- PERSONAGEM 2 -->
+      <div class="personagem">
+        <img src="https://via.placeholder.com/140x140/2a1f15/c9a227?text=Foto" alt="Nome do Personagem">
+        <h3>Nome do Herói</h3>
+        <div class="classe">Classe / Raça</div>
+        <p>Breve descrição do personagem. Personalidade, origem, motivação...</p>
+      </div>
+
+      <!-- PERSONAGEM 3 -->
+      <div class="personagem">
+        <img src="https://via.placeholder.com/140x140/2a1f15/c9a227?text=Foto" alt="Nome do Personagem">
+        <h3>Nome do Herói</h3>
+        <div class="classe">Classe / Raça</div>
+        <p>Breve descrição do personagem. Personalidade, origem, motivação...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O MUNDO / LORE -->
+  <section id="mundo">
+    <h2 class="section-title">O Mundo</h2>
+    <div class="lore-box">
+      <p>
+        <strong>Aqui você coloca a lore principal do mundo.</strong> 
+        Escreva sobre a história antiga, as eras, os deuses, as guerras passadas, 
+        as profecias, etc.
+      </p>
+      <p>
+        Segundo parágrafo da lore. Pode falar sobre as facções, reinos vizinhos, 
+        criaturas místicas ou qualquer coisa importante.
+      </p>
+      <p>
+        Terceiro parágrafo. Sinta-se livre para expandir o quanto quiser.
+      </p>
+    </div>
+  </section>
+
+  <!-- REGRAS -->
+  <section id="regras">
+    <h2 class="section-title">Regras & Informações</h2>
+    <ul class="regras-lista">
+      <li>
+        <strong>Nível inicial:</strong> 
+        Exemplo: Todos começam no nível 3.
+      </li>
+      <li>
+        <strong>Livros permitidos:</strong> 
+        Exemplo: Player's Handbook, Xanathar's, Tasha's...
+      </li>
+      <li>
+        <strong>Criação de personagem:</strong> 
+        Exemplo: Pontos de atributo, rolagem 4d6, etc.
+      </li>
+      <li>
+        <strong>Sessões:</strong> 
+        Exemplo: Toda sexta-feira às 20h, online no Discord.
+      </li>
+      <li>
+        <strong>Outras regras importantes:</strong> 
+        Coloque aqui o que achar necessário.
+      </li>
+    </ul>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <h2 class="section-title">Contato / Grupo</h2>
+    <div class="lore-box" style="text-align: center;">
+      <p>
+        Discord: <strong>link-do-seu-servidor</strong><br>
+        WhatsApp: <strong>número ou link</strong><br>
+        Mestre: <strong>seu nome / @usuario</strong>
+      </p>
+      <br>
+      <a href="#" class="btn">Entrar no Grupo</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo-footer">⚔ Nome do RPG ⚔</div>
+    <p>© 2025 - Todos os direitos reservados | Feito para aventureiros</p>
+  </footer>
+
+  <script>
+    // Smooth scroll para os links do menu
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
