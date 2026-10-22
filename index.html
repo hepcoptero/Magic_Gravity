@@ -302,6 +302,58 @@
       font-weight: 700;
     }
 
+    /* ===== EVENTOS ===== */
+    .eventos-container {
+      background: rgba(42, 31, 21, 0.85);
+      border: 2px solid var(--ouro);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px var(--sombra);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .eventos-embed-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 125%;
+      padding-bottom: 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 2px solid var(--ouro);
+      will-change: transform;
+    }
+
+    .eventos-embed-wrapper iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .canva-link {
+      display: inline-block;
+      color: var(--ouro-claro);
+      text-decoration: underline;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+      text-align: center;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .canva-link:hover {
+      color: var(--ouro);
+    }
+
     /* ===== REGRAS ===== */
     .regras-lista {
       list-style: none;
@@ -352,6 +404,9 @@
       .hero {
         min-height: 55vh;
       }
+      .eventos-container {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -367,6 +422,7 @@
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#personagens">Personagens</a></li>
           <li><a href="#mundo">O Mundo</a></li>
+          <li><a href="#eventos">Eventos</a></li>
           <li><a href="#regras">Regras</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
@@ -459,6 +515,22 @@
       <p>
         Apenas um grupo de heróis improváveis pode impedir o retorno do Antigo Mal. O destino de todos os reinos está em suas mãos.
       </p>
+    </div>
+  </section>
+
+  <!-- EVENTOS -->
+  <section id="eventos">
+    <h2 class="section-title">Eventos</h2>
+    <div class="eventos-container">
+      <div class="eventos-embed-wrapper">
+        <iframe loading="lazy" src="https://www.canva.com/design/DAHYo5384KQ/0WOV8RSfTXq5h8Gp5qvjaQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
+      </div>
+      <div style="text-align: center;">
+        <a class="canva-link" href="https://www.canva.com/design/DAHYo5384KQ/0WOV8RSfTXq5h8Gp5qvjaQ/view?utm_content=DAHYo5384KQ&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">
+          Post de Site para Redes Sociais
+        </a>
+      </div>
     </div>
   </section>
 
